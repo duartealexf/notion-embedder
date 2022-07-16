@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    iframe {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+</body>
+<script>
+  const path = location.toString()
+    .replace(location.host, '')
+    .replace(location.protocol, '')
+    .substring(3);
+
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://1z6ekl4arj.execute-api.us-east-1.amazonaws.com/default/notion/' + path;
+  document.body.appendChild(iframe);
+</script>
