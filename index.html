@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <head>
   <style>
+    * {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
     iframe {
       position: fixed;
       width: 100vw;
@@ -8,15 +17,16 @@
     }
   </style>
 </head>
-<body>
-</body>
+<body></body>
 <script>
-  const path = location.toString()
-    .replace(location.host, '')
-    .replace(location.protocol, '')
-    .substring(3);
+  const src = location
+    .toString()
+    .replace(
+      "https://duartealexf.github.io/notion-embedder/",
+      "https://1z6ekl4arj.execute-api.us-east-1.amazonaws.com/default/notion/"
+    );
 
-  const iframe = document.createElement('iframe');
-  iframe.src = 'https://1z6ekl4arj.execute-api.us-east-1.amazonaws.com/default/notion/' + path;
+  const iframe = document.createElement("iframe");
+  iframe.src = src;
   document.body.appendChild(iframe);
 </script>
