@@ -19,14 +19,13 @@
 </head>
 <body></body>
 <script>
-  const src = location
-    .toString()
-    .replace(
-      "https://duartealexf.github.io/notion-embedder/",
-      "https://1z6ekl4arj.execute-api.us-east-1.amazonaws.com/default/notion/"
-    );
+  const url = new URL(location.toString())
+  url.host = '1z6ekl4arj.execute-api.us-east-1.amazonaws.com';
+  url.pathname = '/notion/' + url.searchParams.get('to');
+  url.searchParams.delete('to');
 
   const iframe = document.createElement("iframe");
-  iframe.src = src;
+  
+  iframe.src = url;
   document.body.appendChild(iframe);
 </script>
